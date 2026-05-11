@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Right to Manage — London Square ShareOwners</title>
+<style>
+  :root {
+    --fg: #24292f;
+    --fg2: #57606a;
+    --bg: #ffffff;
+    --border: #d0d7de;
+    --link: #0969da;
+    --green: #1a7f37;
+    --green-bg: #dafbe1;
+    --yellow: #9a6700;
+    --yellow-bg: #fff8c5;
+    --blue-bg: #ddf4ff;
+    --subtle: #f6f8fa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Noto Sans, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--fg);
+    background: var(--bg);
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 24px 64px;
+  }
+  h1 { font-size: 2em; font-weight: 600; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; margin-bottom: 16px; }
+  h2 { font-size: 1.5em; font-weight: 600; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; margin: 32px 0 16px; }
+  h3 { font-size: 1.25em; font-weight: 600; margin: 24px 0 12px; }
+  p { margin-bottom: 16px; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  ul, ol { padding-left: 2em; margin-bottom: 16px; }
+  li { margin-bottom: 4px; }
+  code { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 85%; background: rgba(175,184,193,0.2); padding: 0.2em 0.4em; border-radius: 4px; }
+
+  /* Alerts */
+  .note, .warn, .tip {
+    padding: 12px 16px;
+    border-radius: 6px;
+    border-left: 4px solid;
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .note { background: var(--blue-bg); border-color: var(--link); }
+  .tip { background: var(--green-bg); border-color: var(--green); }
+  .warn { background: var(--yellow-bg); border-color: var(--yellow); }
+  .note strong { color: var(--link); }
+  .tip strong { color: var(--green); }
+  .warn strong { color: var(--yellow); }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  th { background: var(--subtle); font-weight: 600; font-size: 13px; }
+
+  /* Details / FAQ */
+  details {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: -1px;
+    background: var(--bg);
+  }
+  details:first-of-type { border-radius: 6px 6px 0 0; }
+  details:last-of-type { border-radius: 0 0 6px 6px; margin-bottom: 16px; }
+  details:only-of-type { border-radius: 6px; }
+  summary {
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '\25B6'; font-size: 10px; color: var(--fg2); margin-right: 8px; display: inline-block; transition: transform 0.15s; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .answer { padding: 0 16px 14px; font-size: 14px; color: var(--fg2); line-height: 1.6; }
+
+  /* Timeline */
+  .timeline { padding-left: 20px; border-left: 2px solid var(--border); margin: 16px 0; }
+  .tl { margin-bottom: 14px; position: relative; }
+  .tl::before {
+    content: '';
+    position: absolute;
+    left: -25px; top: 7px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--bg);
+  }
+  .tl.done::before { background: var(--green); border-color: var(--green); }
+  .tl.now::before { background: var(--link); border-color: var(--link); }
+  .tl-date { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--fg2); }
+  .tl-text { font-size: 14px; }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid;
+    transition: opacity 0.15s;
+    font-family: inherit;
+  }
+  .btn:hover { text-decoration: none; opacity: 0.85; }
+  .btn-green { background: var(--green); color: #fff; border-color: rgba(27,31,36,0.15); }
+  .btn-outline { background: var(--subtle); color: var(--fg); border-color: var(--border); }
+  .btn-outline:hover { background: #eaeef2; }
+  .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+
+  .foot { text-align: center; font-size: 13px; color: var(--fg2); margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<h1>Right to Manage (RTM)</h1>
+<p>A guide for share owners of <strong>1 New Tannery Way</strong> and <strong>The Crosse</strong> at London Square, Bermondsey, about exercising our Right to Manage under the <a href="https://www.legislation.gov.uk/ukpga/2002/15/part/2/chapter/1" target="_blank">Commonhold and Leasehold Reform Act 2002</a>.</p>
+
+<h2>What is RTM?</h2>
+<p>The Right to Manage is a legal right under the Commonhold and Leasehold Reform Act 2002. It allows qualifying share owners to take full control of how their building is managed, without having to prove fault or mismanagement. No tribunal, no court case: if 50% of qualifying share owners join the RTM company, the right is automatic.</p>
+
+<h2>What RTM Can and Cannot Do</h2>
+
+<div class="tip">
+  <strong>✅ At building level — what changes</strong><br>
+  Peabody is removed from the management of our buildings. Rendall &amp; Rittner becomes directly accountable to us as share owners, giving us the power to scrutinise spending and challenge costs that are unfair or disproportionate.
+</div>
+
+<div class="warn">
+  <strong>⚠️ At estate level — what stays the same</strong><br>
+  London Square is a mixed property: our buildings sit alongside privately owned units not managed by Peabody. Shared estate services (currently managed by Rendall &amp; Rittner) cover the entire development. Changing or opting out of those would require a majority of <em>all</em> residents, including private owners, which is beyond what building-level RTM can achieve.
+</div>
+
+<table>
+  <thead><tr><th>✅ Building level (RTM can do)</th><th>❌ Estate level (RTM cannot do)</th></tr></thead>
+  <tbody>
+    <tr><td>Remove Peabody from building management</td><td>Replace Rendall &amp; Rittner for shared estate services</td></tr>
+    <tr><td>Hold Rendall &amp; Rittner directly accountable</td><td>Opt out of estate-wide service charges</td></tr>
+    <tr><td>Control building-specific service charges</td><td>Change the terms of your lease</td></tr>
+    <tr><td>Challenge costs that are unfair or disproportionate</td><td>Override decisions requiring all-estate majority</td></tr>
+  </tbody>
+</table>
+
+<h2>HAUS Block Management Proposal</h2>
+<p>We have received a detailed proposal from <strong>HAUS Block Management</strong> (led by Richard Delaney), a specialist firm experienced in guiding leaseholders through the RTM process. The document covers legal steps, estimated costs, timelines, and what changes once RTM is in place.</p>
+
+<div class="btn-group">
+  <a href="https://drive.google.com/file/d/1DlItyD8In3DQbhSzmVSIqWISiMWAe-N0/view?usp=sharing" target="_blank" class="btn btn-green">📄 View HAUS Proposal</a>
+  <a href="rtm-meeting-scheduler.html" class="btn btn-outline">🗓️ Choose Meeting Date</a>
+</div>
+
+<h2>FAQ</h2>
+
+<details>
+  <summary>Does RTM change my lease?</summary>
+  <div class="answer">No. Your lease remains exactly the same. RTM only changes who manages the building on a day-to-day basis. The freeholder retains ownership of the freehold.</div>
+</details>
+<details>
+  <summary>Can we get rid of Rendall &amp; Rittner?</summary>
+  <div class="answer">Not at estate level. Because London Square is a mixed development, Rendall &amp; Rittner manage shared services across all buildings, including privately owned ones. Replacing them would require a majority of all residents on the estate, which is beyond what building-level RTM can achieve. What we <em>can</em> do is demand full transparency on estate charges and formally challenge costs we consider unfair or disproportionate. At building level, RTM removes Peabody from management and makes Rendall &amp; Rittner directly accountable to the leaseholders.</div>
+</details>
+<details>
+  <summary>How many residents need to participate?</summary>
+  <div class="answer">At least 50% of qualifying leaseholders in the building must be members of the RTM company. The more who join, the stronger the process.</div>
+</details>
+<details>
+  <summary>What does it cost?</summary>
+  <div class="answer">HAUS operates on a no-win-no-fee basis, so there is no financial risk if the claim does not succeed. The estimated cost is around <strong>£90 per flat</strong>, paid once. That single payment covers setting up the RTM company and serving the legal notices. Full details are in the HAUS proposal linked above.</div>
+</details>
+<details>
+  <summary>Can the freeholder block it?</summary>
+  <div class="answer">RTM is a no-fault right. The freeholder cannot simply refuse. They can only challenge on specific legal grounds (e.g. the building does not qualify), which is rare for standard residential blocks.</div>
+</details>
+
+<h2>People Involved</h2>
+
+<table>
+  <thead><tr><th>Name</th><th>Role</th><th>Building / Organisation</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Sam Dalton</strong></td><td>Councillor</td><td>West Bermondsey</td></tr>
+    <tr><td><strong>David Noakes</strong></td><td>Councillor</td><td>West Bermondsey</td></tr>
+    <tr><td><strong>Francesco Guerrieri</strong></td><td>Councillor</td><td>North Bermondsey</td></tr>
+    <tr><td><strong>Richard Delaney</strong></td><td>Block Agent</td><td>HAUS Block Management</td></tr>
+  </tbody>
+</table>
+
+<h2>Timeline</h2>
+
+<div class="timeline">
+  <div class="tl now">
+    <div class="tl-date">May 2026</div>
+    <div class="tl-text">Outreach to all residents, sharing HAUS proposal and gathering interest</div>
+  </div>
+  <div class="tl">
+    <div class="tl-date">Late June 2026</div>
+    <div class="tl-text">First full meeting: residents, councillors, and block agent (online)</div>
+  </div>
+  <div class="tl">
+    <div class="tl-date">September 2026</div>
+    <div class="tl-text">If residents agree: form RTM company, serve initial notice</div>
+  </div>
+  <div class="tl">
+    <div class="tl-date">January 2027</div>
+    <div class="tl-text">RTM starts</div>
+  </div>
+</div>
+
+<hr>
+
+<p style="text-align:center;">
+  <a href="rtm-meeting-scheduler.html" class="btn btn-green">🗓️ Choose Your Preferred Meeting Date</a>
+</p>
+
+<div class="foot">
+  Organised by ShareOwners of London Square, Bermondsey SE1<br>
+  Questions? Contact Marco — <a href="mailto:scalvini@gmail.com">scalvini@gmail.com</a> or Lizzie — <a href="mailto:lizzie.addison@hotmail.co.uk">lizzie.addison@hotmail.co.uk</a> for 1 New Tannery Way, and Carol — <a href="mailto:Cne.Nguyen@gmail.com">Cne.Nguyen@gmail.com</a> for The Crosse
+</div>
+
+</body>
+</html>
